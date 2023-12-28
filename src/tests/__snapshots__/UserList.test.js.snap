@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserList renders correctly 1`] = `
+<div
+  aria-label="List of all peers within the user's viewport"
+  class="MuiPaper-root MuiAccordion-root Mui-expanded MuiAccordion-rounded MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    aria-disabled="false"
+    aria-expanded="true"
+    aria-label="Visible peer avatars within the user screen"
+    class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="MuiAccordionSummary-content Mui-expanded"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-alignLeft"
+      >
+        Visible Users
+      </h6>
+    </div>
+    <div
+      aria-disabled="false"
+      aria-hidden="true"
+      class="MuiButtonBase-root MuiIconButton-root MuiAccordionSummary-expandIcon Mui-expanded MuiIconButton-edgeEnd"
+    >
+      <span
+        class="MuiIconButton-label"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ExpandMoreIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          />
+        </svg>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </div>
+  </div>
+  <div
+    class="MuiCollapse-root MuiCollapse-entered"
+    style="min-height: 0px;"
+  >
+    <div
+      class="MuiCollapse-wrapper"
+    >
+      <div
+        class="MuiCollapse-wrapperInner"
+      >
+        <div
+          role="region"
+        >
+          <div
+            class="MuiAccordionDetails-root flex-col"
+          >
+            <div
+              class="MuiTableContainer-root"
+            >
+              <table
+                aria-label="Visible peers within the user screen"
+                class="MuiTable-root"
+              >
+                <thead
+                  class="MuiTableHead-root"
+                  style="background-color: black;"
+                >
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-head"
+                  >
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head"
+                      scope="col"
+                    >
+                      <p
+                        class="MuiTypography-root white-text MuiTypography-body1"
+                      >
+                        ID
+                      </p>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+                      scope="col"
+                    >
+                      <p
+                        class="MuiTypography-root white-text MuiTypography-body1"
+                      >
+                        Username
+                      </p>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+                      scope="col"
+                    >
+                      <p
+                        class="MuiTypography-root white-text MuiTypography-body1"
+                      >
+                        Distance (px)
+                      </p>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+                      scope="col"
+                    >
+                      <p
+                        class="MuiTypography-root white-text MuiTypography-body1"
+                      >
+                        Is Broadcaster
+                      </p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="MuiTableBody-root"
+                >
+                  <tr
+                    aria-label="user8 is 279 from user positon"
+                    class="MuiTableRow-root"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        8
+                      </p>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        user8
+                      </p>
+                    </td>
+                    <td
+                      aria-label="distance"
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                         
+                        279
+                      </p>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                          data-testid="CellTowerIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="m7.3 14.7 1.2-1.2c-1-1-1.5-2.3-1.5-3.5 0-1.3.5-2.6 1.5-3.5L7.3 5.3c-1.3 1.3-2 3-2 4.7s.7 3.4 2 4.7zM19.1 2.9l-1.2 1.2c1.6 1.6 2.4 3.8 2.4 5.9 0 2.1-.8 4.3-2.4 5.9l1.2 1.2c2-2 2.9-4.5 2.9-7.1 0-2.6-1-5.1-2.9-7.1z"
+                          />
+                          <path
+                            d="M6.1 4.1 4.9 2.9C3 4.9 2 7.4 2 10c0 2.6 1 5.1 2.9 7.1l1.2-1.2c-1.6-1.6-2.4-3.8-2.4-5.9 0-2.1.8-4.3 2.4-5.9zm10.6 10.6c1.3-1.3 2-3 2-4.7-.1-1.7-.7-3.4-2-4.7l-1.2 1.2c1 1 1.5 2.3 1.5 3.5 0 1.3-.5 2.6-1.5 3.5l1.2 1.2zM14.5 10c0-1.38-1.12-2.5-2.5-2.5S9.5 8.62 9.5 10c0 .76.34 1.42.87 1.88L7 22h2l.67-2h4.67l.66 2h2l-3.37-10.12c.53-.46.87-1.12.87-1.88zm-4.17 8L12 13l1.67 5h-3.34z"
+                          />
+                        </svg>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr
+                    aria-label="user9 is 279 from user positon"
+                    class="MuiTableRow-root"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        9
+                      </p>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        user9
+                      </p>
+                    </td>
+                    <td
+                      aria-label="distance"
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                         
+                        279
+                      </p>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                          data-testid="CellTowerIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="m7.3 14.7 1.2-1.2c-1-1-1.5-2.3-1.5-3.5 0-1.3.5-2.6 1.5-3.5L7.3 5.3c-1.3 1.3-2 3-2 4.7s.7 3.4 2 4.7zM19.1 2.9l-1.2 1.2c1.6 1.6 2.4 3.8 2.4 5.9 0 2.1-.8 4.3-2.4 5.9l1.2 1.2c2-2 2.9-4.5 2.9-7.1 0-2.6-1-5.1-2.9-7.1z"
+                          />
+                          <path
+                            d="M6.1 4.1 4.9 2.9C3 4.9 2 7.4 2 10c0 2.6 1 5.1 2.9 7.1l1.2-1.2c-1.6-1.6-2.4-3.8-2.4-5.9 0-2.1.8-4.3 2.4-5.9zm10.6 10.6c1.3-1.3 2-3 2-4.7-.1-1.7-.7-3.4-2-4.7l-1.2 1.2c1 1 1.5 2.3 1.5 3.5 0 1.3-.5 2.6-1.5 3.5l1.2 1.2zM14.5 10c0-1.38-1.12-2.5-2.5-2.5S9.5 8.62 9.5 10c0 .76.34 1.42.87 1.88L7 22h2l.67-2h4.67l.66 2h2l-3.37-10.12c.53-.46.87-1.12.87-1.88zm-4.17 8L12 13l1.67 5h-3.34z"
+                          />
+                        </svg>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

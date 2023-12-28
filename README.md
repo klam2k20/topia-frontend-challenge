@@ -12,15 +12,13 @@ In this test, you will rewrite the central algorithm that runs in Topia to maint
 
 You will wrap the results of this algorithm in a user interface of your own design.
 
-- At the root level of this project, in `App.js`, you are expected to present a button named `User List`.
-- Pressing this button will launch a modal that will display a list of users that are on the visible screen centered on `x, y`
-- The default values for the fields should be `x = 800; y = 400`
+- At the root level of this project, in `App.js`, you are expected to present a button named `Create User List`.
+- Pressing this button will launch a modal that will display input fields for current position with default values of `x = 800; y = 400`
 - `x, y` (the user’s current position) should be editable in the modal and as it changes it should update the results of the list.
 - The list of users can be found in `/src/utils/constants.js`
-- Upon opening the modal and when current position and screen size update state, run a utility located in `/src/utils/listUsersInView.js` called `listUsersInView`. This function should return an array of the users in view. `more details about the functionality of this utility are below`
+- Upon closing the modal and when current position and screen size update state, run a utility located in `/src/utils/listUsersInView.js` called `listUsersInView`. This function should return an array of the users in view. `more details about the functionality of this utility are below`
 - From this array, list the users in a table, sorted by distance to the center `x,y`
 - Columns for the table should be: username, distance, and a visual indication whether this user is a broadcaster or not. For this, there is a field called `is_broadcaster` in the user object.
-- Closing the modal should bring you back to our input fields and button which we can change to alter the list in the modal. We should also be able to alter the screen size to change the arguments to `listUsersInView`
 - For purposes of this test and for use in `listUsersInView` assume the avatar height and width for each user is `height = 125px` and `width = 50px` and that the position of each user is the center point of the avatar
 
 ### User List Functionality
