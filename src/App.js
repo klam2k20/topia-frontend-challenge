@@ -1,10 +1,11 @@
 import { Container } from '@material-ui/core';
+import { Stack } from '@mui/material';
 import { useEffect, useState } from 'react';
-import './styles/App.css';
 import UpdateViewModal from './components/UpdateViewModal';
 import UserInfo from './components/UserInfo';
 import { UserList } from './components/UserList';
 import { useUserInfo } from './context/UserInfoProvider';
+import './styles/App.css';
 import listUsersInView from './utils/listUsersInView';
 
 function App() {
@@ -18,9 +19,11 @@ function App() {
 
   return (
     <Container maxWidth='md' className='App'>
-      <UserInfo />
-      <UserList users={visibleUsers} />
-      <UpdateViewModal updateVisibleUsers={(users) => setVisibleUsers(users)} />
+      <Stack direction={'column'} spacing={4}>
+        <UserInfo />
+        <UserList users={visibleUsers} />
+        <UpdateViewModal updateVisibleUsers={(users) => setVisibleUsers(users)} />
+      </Stack>
     </Container>
   );
 }

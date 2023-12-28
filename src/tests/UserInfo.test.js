@@ -12,16 +12,24 @@ describe('UserInfo', () => {
     );
 
     const title = screen.getByText("User's Information");
-    const positionLabel = screen.getByText('Position:');
-    const screenSizeLabel = screen.getByText('Screen Size:');
-    const initialPosition = screen.getByText('(800, 400)');
-    const initialScreenSize = screen.getByText(`${window.innerWidth} x ${window.innerHeight}`);
+    const xPositionLabel = screen.getByText('X Position');
+    const yPositionLabel = screen.getByText('Y Position');
+    const screenWidthLabel = screen.getByText('Screen Width (px)');
+    const screenHeightLabel = screen.getByText('Screen Height (px)');
+    const initialXPosition = screen.getByText('800');
+    const initialYPosition = screen.getByText('400');
+    const initialScreenWidth = screen.getByText(`${window.innerWidth}`);
+    const initialScreenHeight = screen.getByText(`${window.innerHeight}`);
 
     expect(title).toBeInTheDocument();
-    expect(positionLabel).toBeInTheDocument();
-    expect(screenSizeLabel).toBeInTheDocument();
-    expect(initialPosition).toBeInTheDocument();
-    expect(initialScreenSize).toBeInTheDocument();
+    expect(xPositionLabel).toBeInTheDocument();
+    expect(yPositionLabel).toBeInTheDocument();
+    expect(screenWidthLabel).toBeInTheDocument();
+    expect(screenHeightLabel).toBeInTheDocument();
+    expect(initialXPosition).toBeInTheDocument();
+    expect(initialYPosition).toBeInTheDocument();
+    expect(initialScreenWidth).toBeInTheDocument();
+    expect(initialScreenHeight).toBeInTheDocument();
   });
 
   it('Closing UpdateViewModal without updating does not update UserInfo', async () => {
@@ -32,16 +40,24 @@ describe('UserInfo', () => {
     );
 
     const title = screen.getByText("User's Information");
-    const positionLabel = screen.getByText('Position:');
-    const screenSizeLabel = screen.getByText('Screen Size:');
-    const initialPosition = screen.getByText('(800, 400)');
-    const initialScreenSize = screen.getByText(`${window.innerWidth} x ${window.innerHeight}`);
+    const xPositionLabel = screen.getByText('X Position');
+    const yPositionLabel = screen.getByText('Y Position');
+    const screenWidthLabel = screen.getByText('Screen Width (px)');
+    const screenHeightLabel = screen.getByText('Screen Height (px)');
+    const initialXPosition = screen.getByText('800');
+    const initialYPosition = screen.getByText('400');
+    const initialScreenWidth = screen.getByText(`${window.innerWidth}`);
+    const initialScreenHeight = screen.getByText(`${window.innerHeight}`);
 
     expect(title).toBeInTheDocument();
-    expect(positionLabel).toBeInTheDocument();
-    expect(screenSizeLabel).toBeInTheDocument();
-    expect(initialPosition).toBeInTheDocument();
-    expect(initialScreenSize).toBeInTheDocument();
+    expect(xPositionLabel).toBeInTheDocument();
+    expect(yPositionLabel).toBeInTheDocument();
+    expect(screenWidthLabel).toBeInTheDocument();
+    expect(screenHeightLabel).toBeInTheDocument();
+    expect(initialXPosition).toBeInTheDocument();
+    expect(initialYPosition).toBeInTheDocument();
+    expect(initialScreenWidth).toBeInTheDocument();
+    expect(initialScreenHeight).toBeInTheDocument();
 
     const openModal = screen.getByText('Update User View');
     fireEvent.click(openModal);
@@ -61,10 +77,14 @@ describe('UserInfo', () => {
     fireEvent.click(cancelBtn);
 
     expect(title).toBeInTheDocument();
-    expect(positionLabel).toBeInTheDocument();
-    expect(screenSizeLabel).toBeInTheDocument();
-    expect(initialPosition).toBeInTheDocument();
-    expect(initialScreenSize).toBeInTheDocument();
+    expect(xPositionLabel).toBeInTheDocument();
+    expect(yPositionLabel).toBeInTheDocument();
+    expect(screenWidthLabel).toBeInTheDocument();
+    expect(screenHeightLabel).toBeInTheDocument();
+    expect(initialXPosition).toBeInTheDocument();
+    expect(initialYPosition).toBeInTheDocument();
+    expect(initialScreenWidth).toBeInTheDocument();
+    expect(initialScreenHeight).toBeInTheDocument();
   });
 
   it("Updating the user's position and screen dimensions via the UpdateViewModal updates UserInfo", async () => {
@@ -75,16 +95,24 @@ describe('UserInfo', () => {
     );
 
     const title = screen.getByText("User's Information");
-    const positionLabel = screen.getByText('Position:');
-    const screenSizeLabel = screen.getByText('Screen Size:');
-    const initialPosition = screen.getByText('(800, 400)');
-    const initialScreenSize = screen.getByText(`${window.innerWidth} x ${window.innerHeight}`);
+    const xPositionLabel = screen.getByText('X Position');
+    const yPositionLabel = screen.getByText('Y Position');
+    const screenWidthLabel = screen.getByText('Screen Width (px)');
+    const screenHeightLabel = screen.getByText('Screen Height (px)');
+    const initialXPosition = screen.getByText('800');
+    const initialYPosition = screen.getByText('400');
+    const initialScreenWidth = screen.getByText(`${window.innerWidth}`);
+    const initialScreenHeight = screen.getByText(`${window.innerHeight}`);
 
     expect(title).toBeInTheDocument();
-    expect(positionLabel).toBeInTheDocument();
-    expect(screenSizeLabel).toBeInTheDocument();
-    expect(initialPosition).toBeInTheDocument();
-    expect(initialScreenSize).toBeInTheDocument();
+    expect(xPositionLabel).toBeInTheDocument();
+    expect(yPositionLabel).toBeInTheDocument();
+    expect(screenWidthLabel).toBeInTheDocument();
+    expect(screenHeightLabel).toBeInTheDocument();
+    expect(initialXPosition).toBeInTheDocument();
+    expect(initialYPosition).toBeInTheDocument();
+    expect(initialScreenWidth).toBeInTheDocument();
+    expect(initialScreenHeight).toBeInTheDocument();
 
     const openModal = screen.getByText('Update User View');
     fireEvent.click(openModal);
@@ -98,17 +126,21 @@ describe('UserInfo', () => {
     const updateBtn = screen.getByRole('button', { name: /Update/i });
 
     fireEvent.change(xPosition, { target: { value: '100' } });
-    fireEvent.change(yPosition, { target: { value: '100' } });
-    fireEvent.change(screenWidthInput, { target: { value: '100' } });
-    fireEvent.change(screenHeightInput, { target: { value: '100' } });
+    fireEvent.change(yPosition, { target: { value: '200' } });
+    fireEvent.change(screenWidthInput, { target: { value: '300' } });
+    fireEvent.change(screenHeightInput, { target: { value: '400' } });
     fireEvent.click(updateBtn);
 
-    await screen.findByText('(100, 100)');
+    await screen.findByText('100');
 
-    const updatedPosition = screen.getByText('(100, 100)');
-    const updatedScreenSize = screen.getByText('100 x 100');
+    const updatedXPosition = screen.getByText('100');
+    const updatedYPosition = screen.getByText('200');
+    const updatedScreenWidth = screen.getByText('300');
+    const updatedScreenHeight = screen.getByText('400');
 
-    expect(updatedPosition).toBeInTheDocument();
-    expect(updatedScreenSize).toBeInTheDocument();
+    expect(updatedXPosition).toBeInTheDocument();
+    expect(updatedYPosition).toBeInTheDocument();
+    expect(updatedScreenWidth).toBeInTheDocument();
+    expect(updatedScreenHeight).toBeInTheDocument();
   });
 });

@@ -11,7 +11,7 @@ describe('UserList', () => {
       </UserInfoProvider>
     );
 
-    const userlist = screen.getByLabelText("List of all peers within the user's viewport");
+    const userlist = screen.getByLabelText("List of all peers within the user's view");
     expect(userlist).toMatchSnapshot();
   });
 
@@ -51,18 +51,6 @@ describe('UserList', () => {
       </UserInfoProvider>
     );
 
-    const title = screen.getByText("User's Information");
-    const positionLabel = screen.getByText('Position:');
-    const screenSizeLabel = screen.getByText('Screen Size:');
-    const initialPosition = screen.getByText('(800, 400)');
-    const initialScreenSize = screen.getByText(`${window.innerWidth} x ${window.innerHeight}`);
-
-    expect(title).toBeInTheDocument();
-    expect(positionLabel).toBeInTheDocument();
-    expect(screenSizeLabel).toBeInTheDocument();
-    expect(initialPosition).toBeInTheDocument();
-    expect(initialScreenSize).toBeInTheDocument();
-
     const openModal = screen.getByText('Update User View');
     fireEvent.click(openModal);
 
@@ -80,7 +68,7 @@ describe('UserList', () => {
     fireEvent.change(screenHeightInput, { target: { value: '250' } });
     fireEvent.click(updateBtn);
 
-    await screen.findByText('(0, 0)');
+    await screen.findByText('250');
 
     const idLabel = screen.getByText('ID');
     const usernameLabel = screen.getByText('Username');
@@ -152,7 +140,7 @@ describe('UserList', () => {
     fireEvent.change(screenHeightInput, { target: { value: '2000' } });
     fireEvent.click(updateBtn);
 
-    await screen.findByText('(0, 0)');
+    await screen.findAllByText('2000');
 
     const distanceCells = screen.getAllByLabelText('distance');
 

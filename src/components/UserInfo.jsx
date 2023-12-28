@@ -1,5 +1,12 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@material-ui/core';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from '@material-ui/core';
 import { Stack } from '@mui/material';
 import { useUserInfo } from '../context/UserInfoProvider';
 
@@ -9,35 +16,55 @@ import { useUserInfo } from '../context/UserInfoProvider';
 const UserInfo = () => {
   const { position, screenSize } = useUserInfo();
   return (
-    <Accordion defaultExpanded={true}>
-      <AccordionSummary
-        aria-label='User position and screen dimensions'
-        expandIcon={<ExpandMoreIcon />}>
-        <Typography variant='h6' align='left'>
-          User's Information
-        </Typography>
-      </AccordionSummary>
-      <AccordionDetails className='flex-col'>
-        <Stack spacing={2} direction='column'>
-          <Stack
-            aria-label='User position'
-            direction='row'
-            justifyContent={'space-between'}
-            flexWrap={'wrap'}>
-            <Typography variant='body1'>Position:</Typography>
-            <Typography variant='body1'>{`(${position.x}, ${position.y})`}</Typography>
-          </Stack>
-          <Stack
-            aria-label='User screen dimensions'
-            direction='row'
-            justifyContent={'space-between'}
-            flexWrap={'wrap'}>
-            <Typography variant='body1'>Screen Size:</Typography>
-            <Typography variant='body1'>{`${screenSize.width} x ${screenSize.height}`}</Typography>
-          </Stack>
-        </Stack>
-      </AccordionDetails>
-    </Accordion>
+    <Stack aria-label='User position and screen dimensions' direction='column'>
+      <Typography variant='h6' align='left'>
+        User's Information
+      </Typography>
+      <TableContainer>
+        <Table aria-label='User position and screen dimensions'>
+          <TableHead style={{ backgroundColor: 'black' }}>
+            <TableRow>
+              <TableCell>
+                <Typography variant='body1' className='white-text'>
+                  X Position
+                </Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1' className='white-text'>
+                  Y Position
+                </Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1' className='white-text'>
+                  Screen Width (px)
+                </Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1' className='white-text'>
+                  Screen Height (px)
+                </Typography>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                <Typography variant='body1'>{position.x}</Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1'>{position.y}</Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1'>{screenSize.width}</Typography>
+              </TableCell>
+              <TableCell align='center'>
+                <Typography variant='body1'>{screenSize.height}</Typography>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Stack>
   );
 };
 
