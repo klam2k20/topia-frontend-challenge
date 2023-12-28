@@ -4,8 +4,7 @@
 
 ## Overview
 
-The Topia Frontend Challenge is a responsive React application designed to list all visible peer avatars that are entirely
-within a user's screen. A user's screen is defined by the user's position and screen dimensions.
+The Topia Frontend Challenge is a responsive React application designed to list all visible peer avatars that are within a user's screen. A user's screen is defined by the user's position and screen dimensions.
 
 ## Technology
 
