@@ -13,35 +13,13 @@ export default function listUsersInView(positionX, positionY, screenWidth, scree
    * Filter all peer avatar's based on whether the avatar's position is within the user's view port
    * If the avatar's x and y coordinates are between the user's minWidth, maxWidth, minHeight, and maxHeight
    * the avatar is within view
-   * 
-      for (let value of Object.values(users)) {
-        if (
-          minWidth <= value.x &&
-          value.x <= maxWidth &&
-          minHeight <= value.y &&
-          value.y <= maxHeight
-        ) {
-          usersInView.push({
-            id: value.id,
-            username: value.username,
-            distance: Math.floor(findDistance([positionX, positionY], [value.x, value.y])),
-            isBroadcaster: value.is_broadcaster,
-          });
-        }
-      }
    */
-
-  /**
-   * Filter all peer avatar's based on whether the entire avatar is within the user's view port
-   */
-  const halfAvatarWidth = 50 / 2;
-  const halfAvatarHeight = 125 / 2;
   for (let value of Object.values(users)) {
     if (
-      minWidth <= value.x - halfAvatarWidth &&
-      value.x + halfAvatarWidth <= maxWidth &&
-      minHeight <= value.y - halfAvatarHeight &&
-      value.y + halfAvatarHeight <= maxHeight
+      minWidth <= value.x &&
+      value.x <= maxWidth &&
+      minHeight <= value.y &&
+      value.y <= maxHeight
     ) {
       usersInView.push({
         id: value.id,
@@ -51,6 +29,27 @@ export default function listUsersInView(positionX, positionY, screenWidth, scree
       });
     }
   }
+
+  /**
+   * Filter all peer avatar's based on whether the entire avatar is within the user's view port
+    const halfAvatarWidth = 50 / 2;
+    const halfAvatarHeight = 125 / 2;
+    for (let value of Object.values(users)) {
+      if (
+        minWidth <= value.x - halfAvatarWidth &&
+        value.x + halfAvatarWidth <= maxWidth &&
+        minHeight <= value.y - halfAvatarHeight &&
+        value.y + halfAvatarHeight <= maxHeight
+      ) {
+        usersInView.push({
+          id: value.id,
+          username: value.username,
+          distance: Math.floor(findDistance([positionX, positionY], [value.x, value.y])),
+          isBroadcaster: value.is_broadcaster,
+        });
+      }
+    }
+   */
 
   usersInView.sort((a, b) => {
     if (a.distance === b.distance) return a.id - b.id;

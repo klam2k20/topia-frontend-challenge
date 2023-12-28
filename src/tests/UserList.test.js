@@ -95,38 +95,38 @@ describe('UserList', () => {
     expect(username).toBeInTheDocument();
   });
 
-  it("UserList only renders peer avatars whose avatars are fully within the user's viewport", async () => {
-    render(
-      <UserInfoProvider>
-        <App />
-      </UserInfoProvider>
-    );
+  // it("UserList only renders peer avatars whose avatars are fully within the user's viewport", async () => {
+  //   render(
+  //     <UserInfoProvider>
+  //       <App />
+  //     </UserInfoProvider>
+  //   );
 
-    const openModal = screen.getByText('Update User View');
-    fireEvent.click(openModal);
+  //   const openModal = screen.getByText('Update User View');
+  //   fireEvent.click(openModal);
 
-    await screen.findByText('Update View');
+  //   await screen.findByText('Update View');
 
-    const xPosition = screen.getByRole('spinbutton', { name: /X Position/i });
-    const yPosition = screen.getByRole('spinbutton', { name: /Y Position/i });
-    const screenWidthInput = screen.getByRole('spinbutton', { name: /Screen Width/i });
-    const screenHeightInput = screen.getByRole('spinbutton', { name: /Screen Height/i });
-    const updateBtn = screen.getByRole('button', { name: /Update/i });
+  //   const xPosition = screen.getByRole('spinbutton', { name: /X Position/i });
+  //   const yPosition = screen.getByRole('spinbutton', { name: /Y Position/i });
+  //   const screenWidthInput = screen.getByRole('spinbutton', { name: /Screen Width/i });
+  //   const screenHeightInput = screen.getByRole('spinbutton', { name: /Screen Height/i });
+  //   const updateBtn = screen.getByRole('button', { name: /Update/i });
 
-    fireEvent.change(xPosition, { target: { value: '0' } });
-    fireEvent.change(yPosition, { target: { value: '0' } });
-    fireEvent.change(screenWidthInput, { target: { value: '100' } });
-    fireEvent.change(screenHeightInput, { target: { value: '100' } });
-    fireEvent.click(updateBtn);
+  //   fireEvent.change(xPosition, { target: { value: '0' } });
+  //   fireEvent.change(yPosition, { target: { value: '0' } });
+  //   fireEvent.change(screenWidthInput, { target: { value: '100' } });
+  //   fireEvent.change(screenHeightInput, { target: { value: '100' } });
+  //   fireEvent.click(updateBtn);
 
-    await screen.findByText('No Peers Around');
+  //   await screen.findByText('No Peers Around');
 
-    const icon = screen.getByLabelText('No Peers Around Icon');
-    const label = screen.getByText('No Peers Around');
+  //   const icon = screen.getByLabelText('No Peers Around Icon');
+  //   const label = screen.getByText('No Peers Around');
 
-    expect(icon).toBeInTheDocument();
-    expect(label).toBeInTheDocument();
-  });
+  //   expect(icon).toBeInTheDocument();
+  //   expect(label).toBeInTheDocument();
+  // });
 
   it("UserList renders peer avatars in sorted order based on distance from user's position", async () => {
     render(
