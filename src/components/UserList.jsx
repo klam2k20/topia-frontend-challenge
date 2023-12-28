@@ -4,6 +4,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import NoVisibleUsers from './NoVisibleUsers';
 import VisibleUsers from './VisibleUsers';
 
+/**
+ * Displays all visible peer avatars within the user's screen with their id, username,
+ * distance from the user, and is broadcaster boolean
+ */
 export const UserList = ({ users }) => {
   return (
     <Accordion defaultExpanded={true} aria-label="List of all peers within the user's viewport">

@@ -2,6 +2,10 @@ import { Typography } from '@material-ui/core';
 import NoAccountsIcon from '@mui/icons-material/NoAccounts';
 import { Stack } from '@mui/material';
 
+/**
+ * Component to display when there are no peer avatars within
+ * the user's screen
+ */
 const NoVisibleUsers = () => {
   return (
     <Stack

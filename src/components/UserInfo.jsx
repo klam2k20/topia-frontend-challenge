@@ -3,6 +3,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Stack } from '@mui/material';
 import { useUserInfo } from '../context/UserInfoProvider';
 
+/**
+ * Displays the user's initial position and screen dimensions
+ */
 const UserInfo = () => {
   const { position, screenSize } = useUserInfo();
   return (

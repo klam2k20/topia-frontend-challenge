@@ -10,6 +10,10 @@ import {
 import CellTowerIcon from '@mui/icons-material/CellTower';
 import NotInterestedIcon from '@mui/icons-material/NotInterested';
 
+/**
+ * Displays all visible peer avatars within the user's screen with their id, username,
+ * distance from the user, and is broadcaster boolean as a table
+ */
 const VisibleUsers = ({ users }) => {
   return (
     <TableContainer>

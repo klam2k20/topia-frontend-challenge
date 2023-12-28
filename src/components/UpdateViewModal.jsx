@@ -3,6 +3,9 @@ import { useState } from 'react';
 import UpdateForm from './UpdateForm';
 import UpdateViewBtn from './UpdateViewBtn';
 
+/**
+ * A modal used to update the user's position and screen
+ */
 const UpdateViewModal = ({ updateVisibleUsers }) => {
   const [open, setOpen] = useState(false);
 

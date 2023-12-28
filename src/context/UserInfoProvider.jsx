@@ -2,6 +2,9 @@ import React, { createContext, useContext, useState } from 'react';
 
 export const UserInfoContext = createContext();
 
+/**
+ * Stores and updates the user's position and screen dimensions
+ */
 export const UserInfoProvider = ({ children }) => {
   const [position, setPosition] = useState({ x: 800, y: 400 });
   const [screenSize, setScreenSize] = useState({

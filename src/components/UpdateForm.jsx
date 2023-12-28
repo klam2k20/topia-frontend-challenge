@@ -10,6 +10,9 @@ import { useState } from 'react';
 import { useUserInfo } from '../context/UserInfoProvider';
 import listUsersInView from '../utils/listUsersInView';
 
+/**
+ * A form to update the user's position and screen
+ */
 const UpdateForm = ({ handleClose, updateVisibleUsers }) => {
   const { position, screenSize, updateUserPosition, updateScreenSize } = useUserInfo();
   const [formValues, setFormValues] = useState({
@@ -51,6 +54,10 @@ const UpdateForm = ({ handleClose, updateVisibleUsers }) => {
     });
   };
 
+  /**
+   * Updates the user's position and screen size in the UserInfoProvider
+   * and updates the list of visible peer avatars
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     updateUserPosition({ x: +formValues.xPosition.value, y: +formValues.yPosition.value });
